@@ -364,6 +364,7 @@ function Sync-ProjectFiles {
         (Join-Path $AppDir 'database\migrations'),
         (Join-Path $AppDir 'database\seeders'),
         (Join-Path $AppDir 'resources'),
+        (Join-Path $AppDir 'config\app.php'),
         (Join-Path $AppDir 'public\css'),
         (Join-Path $AppDir 'storage\app\public\products')
     )
@@ -376,6 +377,7 @@ function Sync-ProjectFiles {
 
     Ensure-Directory (Join-Path $AppDir 'database\migrations')
     Ensure-Directory (Join-Path $AppDir 'database\seeders')
+    Ensure-Directory (Join-Path $AppDir 'config')
     Ensure-Directory (Join-Path $AppDir 'public\css')
     Ensure-Directory (Join-Path $AppDir 'storage\app\public\products')
 
@@ -383,6 +385,7 @@ function Sync-ProjectFiles {
     Copy-DirectoryContents -Source (Join-Path $RootDir 'database\migrations') -Destination (Join-Path $AppDir 'database\migrations')
     Copy-Item -LiteralPath (Join-Path $RootDir 'database\seeders\DatabaseSeeder.php') -Destination (Join-Path $AppDir 'database\seeders\DatabaseSeeder.php') -Force
     Copy-DirectoryContents -Source (Join-Path $RootDir 'resources') -Destination (Join-Path $AppDir 'resources')
+    Copy-Item -LiteralPath (Join-Path $RootDir 'config\app.php') -Destination (Join-Path $AppDir 'config\app.php') -Force
     Copy-Item -LiteralPath (Join-Path $RootDir 'routes\web.php') -Destination (Join-Path $AppDir 'routes\web.php') -Force
     Copy-DirectoryContents -Source (Join-Path $RootDir 'public\css') -Destination (Join-Path $AppDir 'public\css')
     Copy-DirectoryContents -Source (Join-Path $RootDir 'storage\app\public\products') -Destination (Join-Path $AppDir 'storage\app\public\products')

@@ -37,6 +37,9 @@ Bien moi truong ho tro:
 
 Script se tu bootstrap runtime Laravel vao `.phoneshop-runtime/`, tu tai local PHP/Composer neu can, migrate + seed, roi start server local.
 
+Tai lieu code flow va bootstrap:
+- [CODE_FLOW.md](CODE_FLOW.md)
+
 ## Tai khoan demo
 
 | Vai tro | Email | Mat khau |
